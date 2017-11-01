@@ -1,0 +1,16 @@
+1509513107552	Move 'mybatis-config.xml' to 'resources'
+1509513110040	Move 'spring-mybatis.xml' to 'resources'
+1509513112969	Move 'spring-tx.xml' to 'resources'
+1509513114676	Move 'spring-mvc.xml' to 'resources'
+1509513118713	Delete element
+1509520980057	Delete element
+1509521139290	Move 'serviceImpl' to 'service'
+1509522368752	Rename resource 'exam.java'
+1509546714946	Rename resource 'bean'
+1509546896175	Delete element
+1509547228613	Delete element
+1509547905909	Delete element
+1509548124502	Rename resource 'spring-tx.xml'
+1509548468443	Delete element
+1509548492058	Delete element
+1509549231514	Delete elements

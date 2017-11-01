@@ -1,0 +1,43 @@
+package com.bean;
+
+import java.util.Date;
+
+public class Exam {
+	private int exam_id;
+	private String exam_name;
+	private int exam_courseid;
+	private Date exam_time;
+	private String exam_room;
+	public int getExam_id() {
+		return exam_id;
+	}
+	public void setExam_id(int exam_id) {
+		this.exam_id = exam_id;
+	}
+	public String getExam_name() {
+		return exam_name;
+	}
+	public void setExam_name(String exam_name) {
+		this.exam_name = exam_name;
+	}
+	public int getExam_courseid() {
+		return exam_courseid;
+	}
+	public void setExam_courseid(int exam_courseid) {
+		this.exam_courseid = exam_courseid;
+	}
+	public Date getExam_time() {
+		return exam_time;
+	}
+	public void setExam_time(Date exam_time) {
+		this.exam_time = exam_time;
+	}
+	public String getExam_room() {
+		return exam_room;
+	}
+	public void setExam_room(String exam_room) {
+		this.exam_room = exam_room;
+	}
+	
+	
+}

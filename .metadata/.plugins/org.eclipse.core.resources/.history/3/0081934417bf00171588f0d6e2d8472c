@@ -1,0 +1,66 @@
+package com.pojo;
+
+import java.util.Date;
+
+public class Teacher {
+	private String teacher_id;
+	private String teacher_name;
+	private String teacher_gender;
+	private Date teacher_birth;
+	private String teacher_degree;
+	private String teacher_title;
+	private Date teacher_begintime;
+	private int teacher_depart;
+	
+	
+	public String getTeacher_id() {
+		return teacher_id;
+	}
+	public void setTeacher_id(String teacher_id) {
+		this.teacher_id = teacher_id;
+	}
+	public String getTeacher_name() {
+		return teacher_name;
+	}
+	public void setTeacher_name(String teacher_name) {
+		this.teacher_name = teacher_name;
+	}
+	public String getTeacher_gender() {
+		return teacher_gender;
+	}
+	public void setTeacher_gender(String teacher_gender) {
+		this.teacher_gender = teacher_gender;
+	}
+	public Date getTeacher_birth() {
+		return teacher_birth;
+	}
+	public void setTeacher_birth(Date teacher_birth) {
+		this.teacher_birth = teacher_birth;
+	}
+	public String getTeacher_degree() {
+		return teacher_degree;
+	}
+	public void setTeacher_degree(String teacher_degree) {
+		this.teacher_degree = teacher_degree;
+	}
+	public String getTeacher_title() {
+		return teacher_title;
+	}
+	public void setTeacher_title(String teacher_title) {
+		this.teacher_title = teacher_title;
+	}
+	public Date getTeacher_begintime() {
+		return teacher_begintime;
+	}
+	public void setTeacher_begintime(Date teacher_begintime) {
+		this.teacher_begintime = teacher_begintime;
+	}
+	public int getTeacher_depart() {
+		return teacher_depart;
+	}
+	public void setTeacher_depart(int teacher_depart) {
+		this.teacher_depart = teacher_depart;
+	}
+	
+	
+}

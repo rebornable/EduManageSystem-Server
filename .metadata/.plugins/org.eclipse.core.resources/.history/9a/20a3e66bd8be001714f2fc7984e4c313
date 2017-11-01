@@ -1,0 +1,12 @@
+package com.bean;
+
+import java.util.Date;
+
+public class Inform {
+	private int inform_id;
+	private String inform_name;
+	private String inform_detail;
+	private Date inform_time;
+	
+	
+}
