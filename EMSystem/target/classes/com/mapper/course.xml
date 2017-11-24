@@ -6,7 +6,7 @@
 		select * from course 
 	</select>
 	<select id="findCourse" resultType="com.bean.Course">
-		select * from  course  where name = #{course_name}
+		select * from  course  where course_id = #{id}
 	</select>
 </mapper>
 

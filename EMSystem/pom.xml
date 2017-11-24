@@ -43,7 +43,6 @@
   	<dependency>
     	<groupId>mysql</groupId>
     	<artifactId>mysql-connector-java</artifactId>
-    	<version>5.1.42</version>
     </dependency>
   
   	<!-- mybaits集成spring -->
@@ -69,6 +68,7 @@
     </dependencies>
   <build>
     <finalName>EMSystem</finalName>
+    <pluginManagement>
     <plugins>
        <plugin>
               <groupId>org.apache.maven.plugins</groupId>
@@ -78,6 +78,16 @@
                      <target>1.8</target>
               </configuration>
        </plugin>
-</plugins>
+       </plugins>
+     </pluginManagement>
   </build>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>mysql</groupId>
+  			<artifactId>mysql-connector-java</artifactId>
+  			<version>5.1.42</version>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
 </project>
