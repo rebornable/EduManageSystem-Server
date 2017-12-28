@@ -1,4 +1,4 @@
-package com.controller;
+﻿package com.controller;
 
 import java.util.List;
 
@@ -25,21 +25,44 @@ public class AdminController {
     	System.out.println(list.size()+"studentList--size--controller");
 		return "admin/adminMain";
 	}
-    @Resource
+
+ 	
+ 	 @Resource
  	private ICourseService iCourseService;
  	@RequestMapping("/getcourseid")
  	public String index(ModelMap resultMap) {
  		Course course = iCourseService.findCourse("A1001");
  		resultMap.addAttribute("course", course);
- 		System.out.println(course.getCourse_id()+"controller编号");
  		return "admin/adminMain";
  	}
  	
  	@RequestMapping("/getcourse")
- 	public String getCourse(ModelMap resultMap) {
+ 	public String getCourse(ModelMap resultMap,HttpServletRequest request,HttpServletResponse response) {
  		List<Course> list= iCourseService.getCourse();
  		resultMap.addAttribute("courseList", list);
  		System.out.println(list.size()+"listsize");
- 		return "admin/adminMain";
+ 		return "admin/showCourse";
+ 	}
+ 	
+ 	@RequestMapping("/addcourse")
+ 	public String addCourse(ModelMap resultMap,Course course) {
+        iCourseService.addCourse(course);
+        List<Course> list= iCourseService.getCourse();
+ 		resultMap.addAttribute("courseList", list);
+ 		return "admin/showCourse";
+ 	}
+ 	@RequestMapping("/deletecourse")
+ 	public String deleteCourse(ModelMap resultMap,String courseid) {
+ 		String message="";
+        int result=iCourseService.deleteCourse(courseid);
+        if(result==0) {
+        	message="删除失败!";
+        }else {
+        	message="删除成功!";
+        }
+        resultMap.addAttribute("message", message);
+        List<Course> list= iCourseService.getCourse();
+ 		resultMap.addAttribute("courseList", list);
+ 		return "admin/showCourse";
  	}
 }
