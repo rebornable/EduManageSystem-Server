@@ -8,5 +8,13 @@
 	<select id="findCourse" resultType="com.bean.Course">
 		select * from  course  where course_id = #{id}
 	</select>
+        <insert id="addCourse"  parameterType="com.bean.Course">
+	    insert into course 
+	    values 
+	    (#{course_id},#{name},#{type},#{teacherid},#{time},#{weeks},#{score})
+	</insert>
+	<delete id="deleteCourse">
+	    delete from course  where course_id = #{id}
+	</delete>
 </mapper>
 
