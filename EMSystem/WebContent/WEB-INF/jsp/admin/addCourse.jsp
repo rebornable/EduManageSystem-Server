@@ -17,14 +17,7 @@
 <script type="text/javascript" src="<%=basePath%>js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>js/bootstrap.min.js"></script>
 <script type="text/javascript">
-   function vaild(){
-	   $("#myform").validation();
-	   if($("#myform").vaild()){
-		   return true;
-	   }else{
-		   alert("请检查填写");
-	   }
-   }
+
 </script>
 <style type="text/css">
 .line {
@@ -56,7 +49,7 @@
 		<div style="margin-top: 20px;">
 			<div class="form-group form-width">
 				<label class="control-label ">课程编号: </label> <input type="text"
-					name="course_id" class="form-control" placeholder="课程编号" />
+					name="course_id" id="courseid" class="form-control" required="required" placeholder="课程编号"/>
 			</div>
 			<div class="form-group form-width">
 				<label class="control-label ">课程名称:</label> <input type="text"
@@ -85,7 +78,7 @@
 		</div>
 		<hr class="line">
 		<div class="form-actions" style="text-align: center;margin-top:20px;margin-right:90px;">
-			<button type="submit" onclick="vaild()" class="btn btn-default btn-width">保存</button>
+			<button type="submit" class="btn btn-default btn-width">保存</button>
 			<button type="button" onclick="javascript:history.back()" class="btn btn-default btn-width">返回</button>
 		</div>
 		<br>

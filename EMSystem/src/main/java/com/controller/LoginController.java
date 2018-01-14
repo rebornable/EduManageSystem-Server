@@ -1,5 +1,8 @@
 package com.controller;
 import javax.annotation.Resource;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,18 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.bean.Account;
 import com.service.IAccountService;
 @Controller
-@RequestMapping("/login")
 public class LoginController {
 	@Resource
 	private IAccountService accountService;
 
-	@RequestMapping()
-	public String index(ModelMap resultMap,String accountid,String password) {
-		System.out.println(password);
+	@RequestMapping("/login")
+	public String login(ModelMap resultMap,HttpSession session,
+			String accountid,String password) {
 		Account account = accountService.getAccount(accountid);
+		session.setAttribute("account", account);
 		resultMap.addAttribute("account", account);
-		System.out.println(account.getAccountid()+"controller"+account.getRole());
-		System.out.println(account.getPassword()+"查询密码");
 		if (account.getPassword().equals(password)) {
 			switch (account.getRole()) {
 			case 1:
@@ -28,10 +29,10 @@ public class LoginController {
 			case 3:
             	return "student/studentMain";
 			default:
-				return "error";
+				return "error2";
 			}
 		} else {
-             return "error";
+             return "error2";
 		}
 	}
 }

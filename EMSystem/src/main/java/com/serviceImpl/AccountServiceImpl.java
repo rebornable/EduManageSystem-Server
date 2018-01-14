@@ -17,4 +17,19 @@ public class AccountServiceImpl implements IAccountService{
 		return acc;
 	}
 
+	@Override
+	public String updatepassword(String accountid, String password, String newpassword) {
+		Account acc=accountDao.getAccount(accountid);
+		if(acc.getPassword().equals(password)) {
+		int result=accountDao.updatepassword(accountid,newpassword);
+		if(result==0) {
+		return "修改密码失败！";
+		}else {
+		return "修改密码成功！";
+		}
+		}else {
+		return "原密码错误！";
+		}
+	}
+
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.IScheduleDao">
+       <!-- 获取课表 -->
+      <select id="getSchedule" resultType="com.bean.Course">
+        select c.course_id,c.name,c.type,c.teacherid,c.time,c.weeks,c.score 
+        from course c,student s,schedule sc 
+        where c.course_id=sc.courseid and s.stu_id=sc.studentid 
+            and studentid = 10001
+      </select>
+      <!-- 查询成绩 -->
+      <select id="queryMark" resultMap="getmarkSchedule">
+        select sc.mark, c.name, c.type,c.score 
+        from course c,student s,schedule sc 
+        where c.course_id=sc.courseid and s.stu_id=sc.studentid 
+              and studentid = 10001
+      </select>
+            <resultMap id="getmarkSchedule" type="com.bean.Schedule">
+        <result property="mark" column="mark"/>
+        <association property="course" javaType="com.bean.Course">
+             <id property="course_id" column="course_id"/>
+             <result property="name" column="name"/>
+             <result property="type" column="type"/>
+             <result property="teacherid" column="teacherid"/>
+             <result property="time" column="time"/>
+             <result property="weeks" column="weeks"/>
+             <result property="score" column="score"/>
+        </association>
+        <association property="student" javaType="com.bean.Student">
+             <id property="stu_id" column="stu_id"/>
+             <result property="name" column="name"/>
+             <result property="gender" column="gender"/>
+             <result property="birth" column="birth"/>
+             <result property="grade" column="grade"/>
+             <result property="depart" column="depart"/>
+        </association>
+      </resultMap>
+      <!-- 选课 -->
+      <insert id="selectCourse">
+          insert into schedule(courseid, studentid) values(#{arg1}, #{arg0})
+      </insert>
+      <update id="updateMark">
+           update schedule set mark=#{arg2} where courseid=#{arg1} and studentid=#{arg0}
+      </update>
+</mapper>

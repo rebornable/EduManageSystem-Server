@@ -1,0 +1,12 @@
+@charset "UTF-8";
+.noborder {
+	border: 0;
+}
+
+.nomargin {
+	margin: 0;
+	padding: 0;
+}
+.center{
+	text-align: center;
+}

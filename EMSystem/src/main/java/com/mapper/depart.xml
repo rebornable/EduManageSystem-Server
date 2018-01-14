@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.IDepartDao">
+	<select id="getDepart" resultType="com.bean.Depart">
+		select * from depart
+	</select>
+	<select id="getDepartById" resultType="com.bean.Depart">
+		select * from depart where depart_id = #{depart_id}
+	</select>
+	<insert id="addDepart"  parameterType="com.bean.Depart">
+	    insert into depart 
+	    values 
+	    (#{depart_id},#{name},#{addr})
+	</insert>
+	<delete id="deleteDepart">
+	    delete from depart  where depart_id = #{depart_id}
+	</delete>
+</mapper>

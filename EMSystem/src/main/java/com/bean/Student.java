@@ -1,19 +1,19 @@
 package com.bean;
 
 public class Student {
-	private String student_id;
+	private String stu_id;
 	private String name;
 	private String gender;
 	private String birth;
-	private String begintime;
+	private String grade;
 	private String depart;
 	
-	public String getStudent_id() {
-		return student_id;
+	public String getStu_id() {
+		return stu_id;
 	}
 
 	public void setStudent_id(String student_id) {
-		this.student_id = student_id;
+		this.stu_id = student_id;
 	}
 
 	public String getName() {
@@ -40,12 +40,16 @@ public class Student {
 		this.birth = birth;
 	}
 
-	public String getBegintime() {
-		return begintime;
+	public String getGrade() {
+		return grade;
 	}
 
-	public void setBegintime(String begintime) {
-		this.begintime = begintime;
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+
+	public void setStu_id(String stu_id) {
+		this.stu_id = stu_id;
 	}
 
 	public String getDepart() {
@@ -56,13 +60,15 @@ public class Student {
 		this.depart = depart;
 	}
 
-	public Student(String student_id, String name, String gender, String birth, String begintime, String depart) {
+	
+
+	public Student(String stu_id, String name, String gender, String birth, String grade, String depart) {
 		super();
-		this.student_id = student_id;
+		this.stu_id = stu_id;
 		this.name = name;
 		this.gender = gender;
 		this.birth = birth;
-		this.begintime = begintime;
+		this.grade = grade;
 		this.depart = depart;
 	}
 

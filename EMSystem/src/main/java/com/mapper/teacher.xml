@@ -3,10 +3,31 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.ITeacherDao">
 	<select id="getTeacherID" resultType="com.bean.Teacher">
-		select * from teacher where teacher_id = #{teacherid}
+		select * from teacher where
+		teacher_id = #{teacherid}
 	</select>
 	<select id="getTeacher" resultType="com.bean.Teacher">
 		select * from teacher
 	</select>
-	
+	<delete id="deleteTeacher">
+		delete from teacher where teacher_id = #{teacherid}
+	</delete>
+	<insert id="addTeacher" parameterType="com.bean.Teacher">
+		insert into teacher values
+		(#{teacher_id},#{name},#{gender},#{birth},#{degree},#{tittle},#{depart})
+	</insert>
+	<resultMap id="getStudentCourse" type="com.bean.StudentMark">
+	    <result property="studentid" column="stu_id" />
+		<result property="studentname" column="name" />
+		<result property="gender" column="gender" />
+		<result property="courseid" column="courseid"/>
+		<result property="coursename" column="coursename"/>
+		<result property="mark" column="mark" />
+	</resultMap>
+	<select id="getTeaCourseStudentList" resultMap="getStudentCourse">
+		select s.stu_id, s.name ,s.gender,scc.name as coursename,scc.mark from
+		(select * from course c join schedule sc on (sc.courseid=c.course_id))scc
+		join student s on(scc.studentid=s.stu_id)
+		where course_id="A1001";
+	</select>
 </mapper>

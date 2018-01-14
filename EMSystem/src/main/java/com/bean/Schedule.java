@@ -1,27 +1,31 @@
 package com.bean;
 
 public class Schedule {
-	private String courseid;
-	private String studentid;
+	private Course course;
+	private Student student;
 	private Integer mark;
-	public Schedule(String courseid, String studentid, Integer mark) {
+	
+	
+	public Schedule() {
 		super();
-		this.courseid = courseid;
-		this.studentid = studentid;
+	}
+	public Schedule(Course course, Student student, Integer mark) {
+		super();
+		this.course = course;
+		this.student = student;
 		this.mark = mark;
 	}
-
-	public String getCourseid() {
-		return courseid;
+	public Course getCourse() {
+		return course;
 	}
-	public void setCourseid(String courseid) {
-		this.courseid = courseid;
+	public void setCourse(Course course) {
+		this.course = course;
 	}
-	public String getStudentid() {
-		return studentid;
+	public Student getStudent() {
+		return student;
 	}
-	public void setStudentid(String studentid) {
-		this.studentid = studentid;
+	public void setStudent(Student student) {
+		this.student = student;
 	}
 	public Integer getMark() {
 		return mark;
@@ -29,9 +33,6 @@ public class Schedule {
 	public void setMark(Integer mark) {
 		this.mark = mark;
 	}
-	public Schedule() {
-		super();
-	}
-
+	
 	
 }

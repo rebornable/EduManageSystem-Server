@@ -1,4 +1,4 @@
-﻿package com.serviceImpl;
+package com.serviceImpl;
 
 import java.util.List;
 
@@ -41,3 +41,10 @@ public class CourseServiceImpl implements ICourseService {
 			return 1;
 		}
 	}
+
+	@Override
+	public List<Course> getTeacherCourse(String teacherid) {
+		List<Course> list = dao.getTeacherCourse(teacherid);
+		return list;
+	}
+}
